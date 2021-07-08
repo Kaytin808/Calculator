@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(179, 183, 185);
+}
+.container {
+    margin-left: 45em;
+    margin-top: 11em;
+}
+.calculator {
+    background-color: aquamarine;
+height: 550px;
+width: 500px;
+border: 1px solid aquamarine;
+border-radius: 10px;
+}
+.screen {
+    background-color: rgb(255, 255, 255);
+    height: 65px;
+    width: 414px;
+    top: 200px;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-left: 49em;
+    margin-top: -34em;
+}
+.buttons {
+    width: 50px;
+    height: 40px;
+}
+#buttonGrid {
+    display: inline-grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 39px 39px 39px 39px;
+
+}
+#equals {
+    width: 100px;
+}
