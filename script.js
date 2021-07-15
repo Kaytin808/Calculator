@@ -1,5 +1,7 @@
+// All operator functions //
+
 function add(a,b) {
-    return a + b;
+  return a + b;
 }
 function sub(a,b) {
     return a - b;
@@ -20,7 +22,7 @@ function operator (a, b, c) {
           output = a + b
           break;
   
-        case '*':
+        case 'x':
           output = a * b
           break;
   
@@ -43,3 +45,43 @@ function operator (a, b, c) {
   
     return output;
   }
+// Empty variables for saving number inputs //
+  const results_div = document.querySelector('.screen')
+  var firstNum = "";
+  var secondNum = "";
+var storedNum ="";
+ var currentOp = "";
+const numbers = document.querySelectorAll(".numbers")
+// add a click listener to every butttons on the calculator //
+numbers.forEach((numbers) => {
+  numbers.addEventListener('click', function (){
+    // When clicked, stored into first number and saved into stored number //
+    firstNum += numbers.value;
+    // Whatever you clicked will show up on the calculator screen //
+    results_div.innerHTML = firstNum;
+    // to test if its working
+  })
+})
+// making a button listener for operators
+const buttons = document.querySelectorAll('.operator');
+buttons.forEach((buttons) => {
+  buttons.addEventListener('click', function() {
+   // when operator is clicked, saves that first number //
+    storedNum = firstNum;
+    // saves current Operator //
+    currentOp += buttons.value;
+    // Saves a Second number and stores it for later calculation //
+    numbers.forEach((numbers) => {
+      numbers.addEventListener('click', function(){
+        secondNum += numbers.value;
+        results_div.innerHTML = secondNum;
+      })
+    })
+  })
+})
+// invokes the operator function when equals button is clicked //
+const equals = document.querySelector('.equals');
+equals.addEventListener('click', function(){
+var results = operator(parseFloat(storedNum), parseFloat(secondNum),(currentOp))
+  results_div.innerHTML = results;
+})
