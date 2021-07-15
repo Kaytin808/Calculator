@@ -45,17 +45,33 @@ body {
     align-items: center;
     min-height: 70vh;
 }
-.buttons:hover {
-    background: rgb(185, 228, 245);
+#buttonGrid > .numbers:hover {
+    background: rgb(223, 243, 255);
 }
 #buttonGrid > .ac:hover,.c:hover {
     background: rgb(233, 233, 233);
 }
-#buttonGrid > #minus:hover, #plus:hover, #add:hover, #divide:hover, #percent:hover, #times:hover {
+#buttonGrid > .operator:hover {
     background: rgb(255, 255, 255);
 }
-#buttonGrid > #equals:hover {
+#buttonGrid > .equals:hover {
     background: rgb(233, 233, 233);
+}
+#buttonGrid > .numbers {
+    width: 73px;
+    height: 67px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: rgb(141, 213, 241);
+    border-radius: 10px;
+    border: none;
+}
+.decimal {
+    width: 73px;
+    height: 67px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: rgb(141, 213, 241);
+    border-radius: 10px;
+    border: none;
 }
 .buttons {
     width: 73px;
@@ -81,7 +97,7 @@ body {
     border-radius: 10px;
     border: none;
 }
-#percent {
+.operator {
     width: 73px;
     height: 67px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -89,47 +105,16 @@ body {
     border-radius: 10px;
     border: none;
 }
-#divide {
-    width: 73px;
-    height: 67px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: rgb(188, 236, 255);
-    border-radius: 10px;
-    border: none;
-}
-#times {
-    width: 73px;
-    height: 67px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: rgb(188, 236, 255);
-    border-radius: 10px;
-    border: none;
-}
-#minus {
-    width: 73px;
-    height: 67px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: rgb(188, 236, 255);
-    border-radius: 10px;
-    border: none;
-}
+
 #buttonGrid {
     display: inline-grid;
     grid-template-columns: 85px 85px 85px 75px;
     grid-template-rows: 81px 78px 78px 78px;
 }
-#equals {
+.equals {
     width: 159px;
     height: 68px;
     background: rgb(255, 255, 255);
-    border-radius: 10px;
-    border: none;
-}
-#plus {
-    width: 73px;
-    height: 67px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: rgb(188, 236, 255);
     border-radius: 10px;
     border: none;
 }
