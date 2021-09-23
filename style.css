@@ -1,5 +1,6 @@
 body {
     background-color: rgb(179, 183, 185);
+    position: relative;
 }
 #container {
     display: flex;
@@ -8,6 +9,7 @@ body {
     align-items: center;
     text-align: center;
     height: 85vh;
+    
 }
 .calculator {
     background: rgb(160,157,209);
@@ -22,6 +24,7 @@ body {
     top: 19%;
     left: 41%;
     margin-right: -50%;
+    
 }
 .screen {
     background: white;
@@ -31,6 +34,7 @@ body {
     text-align: right;
     font-size: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
 }
 .results {
     font-size: 50px;
@@ -43,7 +47,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 64vh;
+    position: relative;
+
 }
 #buttonGrid > .numbers:hover {
     background: rgb(223, 243, 255);
