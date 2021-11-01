@@ -30,42 +30,72 @@ function operator (a, b, c) {
         return output;
       }
     }
-let firstInput = '';
-let secondInput = '';
-let currentOp = '';
+    // Stored variables 
+var input = ''
+ var result;
+ var problem;
 const results_div = document.querySelector('.screen')
-const numberBtns = document.querySelectorAll('.numbers')
-numberBtns.forEach((numbers) => {
-numbers.addEventListener('click', () => {
-  if (currentOp === '') {
-    firstInput += numbers.value;
-    results_div.innerHTML= firstInput;
-  } else {
-    secondInput += numbers.value;
-    results_div.innerHTML= firstInput + currentOp + secondInput
+const allBtns = document.querySelectorAll('.buttons')
+// Saving first and second input
+allBtns.forEach((buttons) => {
+buttons.addEventListener('click', () => {
+  input += buttons.value;
+  if (typeof input === 'string') {
+    var calculate = input.match(/\d+|[^0-9]/g)
   }
-});
-});
- // listeners for operators //
-const operatorBtns = document.querySelectorAll('.operator');
-// operator buttons //
-operatorBtns.forEach((operators) => {
-  operators.addEventListener('click', () => {
-currentOp += operators.value;
-results_div.innerHTML= firstInput + currentOp
-  })
+  problem = calculate;
+  results_div.innerHTML=input;
 })
+})
+
 // equals //
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
-  var results = operator(parseInt(firstInput),parseInt(secondInput),(currentOp))
-  results_div.innerHTML= results;
+  for (a=0;a < problem.length;a++) {
+    if (a == 0) {
+      result = parseInt(problem[a])
+    } else {
+      if (!isNaN(problem[a])) {
+        switch (problem [a - 1]) {
+        case '-':
+          result -= parseInt(problem[a])
+          break;
+          case '+':
+          result += parseInt(problem[a])
+          break;
+          case '*':
+          result *= parseInt(problem[a])
+          break;
+          case '/':
+          result /= parseInt(problem[a])
+          break;
+        }
+      }
+    }
+  }
+  results_div.innerHTML = result;
+})
+// operator button // 
+var operatorBtn = document.querySelectorAll('.operator')
+operatorBtn.forEach((operators) => {
+  operators.addEventListener('click', () => {
+    if (result == undefined) {
+      results_div.innerHTML = operators.value;
+}
+})
 })
 // Clear button //
 const clearBtn = document.querySelector('.c');
 clearBtn.addEventListener('click', () => {
   results_div.innerHTML = 0;
-  firstInput = '';
-  secondInput ='';
+  input="";
+  problem;
+  currentOp ='';
+})
+const acBtn = document.querySelector('.ac');
+acBtn.addEventListener('click', () => {
+  results_div.innerHTML = 0;
+  input="";
+  problem;
   currentOp ='';
 })
