@@ -75,15 +75,6 @@ equals.addEventListener('click', () => {
   }
   results_div.innerHTML = result;
 })
-// operator button // 
-var operatorBtn = document.querySelectorAll('.operator')
-operatorBtn.forEach((operators) => {
-  operators.addEventListener('click', () => {
-    if (result == undefined) {
-      results_div.innerHTML = operators.value;
-}
-})
-})
 // Clear button //
 const clearBtn = document.querySelector('.c');
 clearBtn.addEventListener('click', () => {
