@@ -51,6 +51,7 @@ buttons.addEventListener('click', () => {
 // equals //
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
+  disableBtn()
   for (a=0;a < problem.length;a++) {
     if (a == 0) {
       result = parseInt(problem[a])
@@ -74,10 +75,16 @@ equals.addEventListener('click', () => {
     }
   }
   results_div.innerHTML = result;
-})
+function disableBtn () {
+  document.querySelectorAll('.buttons').forEach(elem => {
+    elem.disabled = true;
+    elem.removeAttribute;
+});
+}
 // Clear button //
 const clearBtn = document.querySelector('.c');
 clearBtn.addEventListener('click', () => {
+  enableBtn();
   results_div.innerHTML = 0;
   input="";
   problem;
@@ -85,8 +92,15 @@ clearBtn.addEventListener('click', () => {
 })
 const acBtn = document.querySelector('.ac');
 acBtn.addEventListener('click', () => {
+  enableBtn();
   results_div.innerHTML = 0;
   input="";
   problem;
   currentOp ='';
 })
+})
+function enableBtn () {
+  document.querySelectorAll('.buttons').forEach(elem => {
+    elem.disabled = false;
+  })
+}

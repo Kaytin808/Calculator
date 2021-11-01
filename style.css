@@ -11,6 +11,9 @@ body {
     height: 85vh;
     
 }
+button[disabled], button{
+    color:rgb(0, 0, 0);
+}
 .calculator {
     background: rgb(160,157,209);
     background: linear-gradient(114deg, rgba(160,157,209,1) 0%, rgba(100,100,255,1) 36%, rgba(99,229,255,1) 72%); 
